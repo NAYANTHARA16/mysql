@@ -1,0 +1,45 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| movies             |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use movies;
+Database changed
+mysql> create table Movie(Name VARCHAR(30),Actor VARCHAR(30),Actress VARCHAR(30),Release_Year INT NOT NULL,Director VARCHAR(30),PRIMARY KEY(Name));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO Movie VALUES('Parasite','Park','ChoYeo',2019,'BongJoon');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO Movie VALUES('THE SOCIAL DILEMMA','Tristian Harris','Kara',2020,'Jeff Orlowski');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO Movie VALUES('THE PURSUIT OF HAPPINESS','Will Smith','Thandiwe Newton',2006,'Gabriele Muccino');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from Movie;
++--------------------------+-----------------+-----------------+--------------+------------------+
+| Name                     | Actor           | Actress         | Release_Year | Director         |
++--------------------------+-----------------+-----------------+--------------+------------------+
+| Parasite                 | Park            | ChoYeo          |         2019 | BongJoon         |
+| THE PURSUIT OF HAPPINESS | Will Smith      | Thandiwe Newton |         2006 | Gabriele Muccino |
+| THE SOCIAL DILEMMA       | Tristian Harris | Kara            |         2020 | Jeff Orlowski    |
++--------------------------+-----------------+-----------------+--------------+------------------+
+3 rows in set (0.02 sec)
+
+mysql> select name,actor from movie order by name;
++--------------------------+-----------------+
+| name                     | actor           |
++--------------------------+-----------------+
+| Parasite                 | Park            |
+| THE PURSUIT OF HAPPINESS | Will Smith      |
+| THE SOCIAL DILEMMA       | Tristian Harris |
++--------------------------+-----------------+
+3 rows in set (0.00 sec)
